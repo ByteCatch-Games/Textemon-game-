@@ -1,6 +1,6 @@
 **Textémon**
 
-Welcome to Textémon, a text-based game that allows you to become a Pokémon trainer and embark on a journey to catch, train, and battle with various Pokémon. This game is built entirely in Python and provides a fun and engaging experience for players of all ages.
+Welcome to Textémon, a text-based game that allows you to become a Pokémon trainer and embark on a journey to buy and battle with various Pokémon. This game is built entirely in Python and provides a fun and engaging experience for players of all ages.
 
 **Getting Started**
 
