@@ -31,6 +31,9 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 
 Textémon is released under the MIT license. See the LICENSE file for more details.
 
-Credits
+**Information**
+This is a project for school. We made the code mainly online on Datalore by jetbrains. There is an accomapny app for this game. The app in made on Quant-UX. (Link here)
+
+**Credits**
 
 Textémon was created by [Your Name Here]. Special thanks to the creators of the Pokémon franchise for inspiring this project. Pokémon is a trademark of Nintendo. This project is not affiliated with or endorsed by Nintendo.
