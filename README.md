@@ -8,6 +8,8 @@ To get started with Textémon, you'll need to have Python 3 installed on your co
 
 Once you have Python installed, you can download the Textémon source code from this GitHub repository. To do so, click the "Download ZIP" button on the repository page or use Git to clone the repository to your local machine.
 
+Make sure you have the packages Time and Random2 installed.
+
 Once you have the source code, you can run the game by navigating to the directory where the code is saved and running the following command:
 
 Copy code
