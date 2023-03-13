@@ -3,8 +3,7 @@
 Welcome to Textémon, a text-based game that allows you to become a Pokémon trainer and embark on a journey to buy and battle with various Pokémon. This game is built entirely in Python and provides a fun and engaging experience for players of all ages.
 
 **Getting Started**
-
-To get started with Textémon, you'll need to have Python 3 installed on your computer. You can download the latest version of Python from the official Python website at https://www.python.org/downloads/.
+Textemon was built entirely from python. Therefore, to get started with Textémon, you'll need to have Python 3 installed on your computer. You can download the latest version of Python from the official Python website at https://www.python.org/downloads/.
 
 Once you have Python installed, you can download the Textémon source code from this GitHub repository. To do so, click the "Download ZIP" button on the repository page or use Git to clone the repository to your local machine.
 
@@ -29,6 +28,10 @@ Textémon is an open-source project and contributions are welcome! If you'd like
 
 Before submitting a pull request, please make sure your changes are thoroughly tested and documented. All contributions must adhere to the project's code of conduct.
 
+**Upcoming features**
+
+We hope to add the ability to play PvP on multiple devices, saving of game progress, items, and other small details.
+
 **License**
 
 Textémon is released under the MIT license. See the LICENSE file for more details.
@@ -38,4 +41,5 @@ This is a project for school. We made the code mainly online on Datalore by jetb
 
 **Credits**
 
-Textémon was created by [Your Name Here]. Special thanks to the creators of the Pokémon franchise for inspiring this project. Pokémon is a trademark of Nintendo. This project is not affiliated with or endorsed by Nintendo.
+Textémon was created by [Your Name Here]. Special thanks to the creators of the Pokémon franchise for inspiring this project. Pokémon is a trademark of Nintendo. This project is not affiliated with or endorsed by Nintendo. 
+Thanks all the Stargazers who supported our project.
