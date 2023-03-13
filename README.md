@@ -68,6 +68,6 @@ Textémon was created by ByteCatch Games. Special thanks to the creators of the 
 ---
 
 <h3 align="center">
-A ⭐️ to <b>Model Repo</b> is must as a motivation booster.
+A ⭐️ to <b>Textemon games</b> is must as a motivation booster.
 </h3>
 
