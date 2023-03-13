@@ -34,7 +34,7 @@ We hope to add the ability to play PvP on multiple devices, saving of game progr
 
 **License**
 
-Textémon is released under the MIT license. See the LICENSE file for more details.
+Textémon is released under the GPL V3 license. See the LICENSE file for more details.
 
 **Information**
 This is a project for school. We made the code mainly online on Datalore by jetbrains. There is an accomapny app for this game. The app in made on Quant-UX. (Link here)
