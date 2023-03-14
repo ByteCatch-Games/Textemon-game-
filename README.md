@@ -1,5 +1,5 @@
-[Textemon logo](https://user-images.githubusercontent.com/127311695/224943632-2860cc4a-f606-4aaa-871b-02eaeca2af13.png)
-
+![Model](https://user-images.githubusercontent.com/127311695/224943632-2860cc4a-f606-4aaa-871b-02eaeca2af13.png)
+---
 
 Welcome to Textémon, a text-based game that allows you to become a Pokémon trainer and embark on a journey to buy and battle with various Pokémon. This game is built entirely in Python and provides a fun and engaging experience for players of all ages.
 
