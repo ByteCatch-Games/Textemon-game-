@@ -1,4 +1,5 @@
-# Textémon
+[Textemon logo](https://user-images.githubusercontent.com/127311695/224943632-2860cc4a-f606-4aaa-871b-02eaeca2af13.png)
+
 
 Welcome to Textémon, a text-based game that allows you to become a Pokémon trainer and embark on a journey to buy and battle with various Pokémon. This game is built entirely in Python and provides a fun and engaging experience for players of all ages.
 
@@ -29,7 +30,7 @@ Textémon is an open-source project and contributions are welcome! If you'd like
 Before submitting a pull request, please make sure your changes are thoroughly tested and documented. All contributions must adhere to the project's code of conduct.
 
 # 🔥 Features
-`model-repo` comes with a bundle of features already. You can do the followings with it,
+`Textemon` comes with a bundle of features already. You can do the followings with it,
 
 ## 🔢 Feature 1
  - Description.
@@ -53,10 +54,10 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 - ✔️ Feature Request 10.
 - ✔️ Feature Request 11.
 
-If you find something is missing, `model-repo` is listening. Please create a feature request [from here](https://github.com/Liquefy7822/Textemon-game-/issues/new/choose).
+If you find something is missing, `Textemon` is listening. Please create a feature request [from here](https://github.com/Liquefy7822/Textemon-game-/issues/new/choose).
 # License
 
-Textémon is released under the GPL V3 license. See the LICENSE file for more details.
+Textémon is released under the GPL General Public Licence V3 license. See the LICENSE file for more details.
 
 # Informationℹ︎
 This is a project for school. We made the code mainly online on Datalore by jetbrains. There is an accomapny app for this game. The app in made on Quant-UX. (Link here)
