@@ -42,7 +42,7 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 # 🦄 Upcoming Features
 `model-repo` has all the potentials to grow further. Here are some of the upcoming features planned(not in any order),
 
-- ✔️ Feature Request 1.
+- ✔️ SQLite to save progress.
 - ✔️ Feature Request 2.
 - ✔️ Feature Request 3.
 - ✔️ Feature Request 4.
