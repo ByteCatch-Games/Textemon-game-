@@ -42,8 +42,8 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 # 🦄 Upcoming Features
 `model-repo` has all the potentials to grow further. Here are some of the upcoming features planned(not in any order),
 
-- ✔️ SQLite to save progress.
-- ✔️ Playsound for effects of sound in battle, picking of pokemon, etc.
+- ✔️ add SQLite to save progress.
+- ✔️ add Playsound for effects of sound in battle, picking of pokemon, etc.
 - ✔️ Feature Request 3.
 - ✔️ Feature Request 4.
 - ✔️ Feature Request 5.
