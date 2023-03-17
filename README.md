@@ -13,7 +13,7 @@ Make sure you have the packages Time and Random2 installed.
 Once you have the source code, you can run the game by navigating to the directory where the code is saved and running the following command:
 
 Copy code
-python code.py
+main.py
 This will launch the game and you can start playing!
 
 # How to Play🎮
