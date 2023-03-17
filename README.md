@@ -66,7 +66,7 @@ This is a project for school. We made the code mainly online on Datalore by jetb
 
 Textémon was created by ByteCatch Games. Special thanks to the creators of the Pokémon franchise for inspiring this project. Pokémon is a trademark of Nintendo. This project is not affiliated with or endorsed by Nintendo. 
 ### Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
-Thanks to ckaznable for our first star!
+Thanks to @ckaznable for our first star!
 ---
 <img width="417" alt="Screenshot 2023-03-15 at 10 16 22 AM" src="https://user-images.githubusercontent.com/127311695/225187472-82262b70-7194-497d-b5e9-61537741b26d.png">
 
