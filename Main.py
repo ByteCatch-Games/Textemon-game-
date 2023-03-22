@@ -6,7 +6,7 @@ print('In a land far far away...')
 print("is the land of textemon. A world were text based monsters roamed.")
 print('This idea and all names are from the Nintendo company and Game Freak.')
 print("Pokémon is a trademark of Nintendo. This project is not affiliated with or endorsed by Nintendo.")
-print("Copyright © [Your Name or Organization] [Year of Creation]")
+print("Copyright © ByteCatch Games 2023")
 print("All rights reserved. This project and its contents are protected by copyright law. No part of this project may be reproduced, distributed, or transmitted in any form or by any means, without the prior written permission of the copyright owner.")
 print("\n\n\n\n")
 time.sleep(5)
@@ -14,6 +14,8 @@ time.sleep(5)
 #core engine
 class Pokemon:
     def __init__(self, name, element, max_hp, max_energy,):
+        self.offensive_move1 = None
+        self.defensive_move2 = None
         self.name = name
         self.element = element
         self.max_hp = max_hp
@@ -204,93 +206,74 @@ for pokemon in [pikachu, charizard, blastoise, venusaur, lycanroc, beedrill, cro
     print(f"  Offensive moves: {pokemon.offensive_moves1[0][0]},{pokemon.offensive_moves2[0][0]},{pokemon.offensive_moves3[0][0]}")
     print(f"  Defensive moves: {pokemon.defensive_moves1[0][0]},{pokemon.defensive_moves2[0][0]}\n")
     time.sleep(1)
-elemental_chart = {
-    "Normal": {
-        "weaknesses": ["Fighting"],
-        "strengths": []
-    },
-    "Fire": {
-        "weaknesses": ["Water", "Ground", "Rock"],
-        "strengths": ["Grass", "Ice", "Bug", "Steel"]
-    },
-    "Water": {
-        "weaknesses": ["Grass", "Electric"],
-        "strengths": ["Fire", "Ground", "Rock"]
-    },
-    "Electric": {
-        "weaknesses": ["Ground"],
-        "strengths": ["Water", "Flying"]
-    },
-    "Grass": {
-        "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug"],
-        "strengths": ["Water", "Ground", "Rock"]
-    },
-    "Ice": {
-        "weaknesses": ["Fire", "Fighting", "Rock", "Steel"],
-        "strengths": ["Grass", "Ground", "Flying", "Dragon"]
-    },
-    "Fighting": {
-        "weaknesses": ["Flying", "Psychic", "Fairy"],
-        "strengths": ["Normal", "Ice", "Rock", "Dark", "Steel"]
-    },
-    "Poison": {
-        "weaknesses": ["Ground", "Psychic"],
-        "strengths": ["Grass", "Fairy"]
-    },
-    "Ground": {
-        "weaknesses": ["Water", "Grass", "Ice"],
-        "strengths": ["Fire", "Electric", "Poison", "Rock", "Steel"]
-    },
-    "Flying": {
-        "weaknesses": ["Electric", "Ice", "Rock"],
-        "strengths": ["Grass", "Fighting", "Bug"]
-    },
-    "Psychic": {
-        "weaknesses": ["Bug", "Ghost", "Dark"],
-        "strengths": ["Fighting", "Poison"]
-    },
-    "Bug": {
-        "weaknesses": ["Fire", "Flying", "Rock"],
-        "strengths": ["Grass", "Psychic", "Dark"]
-    },
-    "Rock": {
-        "weaknesses": ["Water", "Grass", "Fighting", "Ground", "Steel"],
-        "strengths": ["Fire", "Ice", "Flying", "Bug"]
-    },
-    "Ghost": {
-        "weaknesses": ["Ghost", "Dark"],
-        "strengths": ["Psychic", "Ghost"]
-    },
-    "Dragon": {
-        "weaknesses": ["Ice", "Dragon", "Fairy"],
-        "strengths": ["Dragon"]
-    },
-    "Dark": {
-        "weaknesses": ["Fighting", "Bug", "Fairy"],
-        "strengths": ["Psychic", "Ghost"]
-    },
-    "Steel": {
-        "weaknesses": ["Fire", "Fighting", "Ground"],
-        "strengths": ["Ice", "Rock", "Fairy"]
-    },
-    "Fairy": {
-        "weaknesses": ["Poison", "Steel"],
-        "strengths": ["Fighting", "Dragon", "Dark"]
-    }
-}
+elemental_chart = dict(Normal={
+    "weaknesses": ["Fighting"],
+    "strengths": []
+}, Fire={
+    "weaknesses": ["Water", "Ground", "Rock"],
+    "strengths": ["Grass", "Ice", "Bug", "Steel"]
+}, Water={
+    "weaknesses": ["Grass", "Electric"],
+    "strengths": ["Fire", "Ground", "Rock"]
+}, Electric={
+    "weaknesses": ["Ground"],
+    "strengths": ["Water", "Flying"]
+}, Grass={
+    "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug"],
+    "strengths": ["Water", "Ground", "Rock"]
+}, Ice={
+    "weaknesses": ["Fire", "Fighting", "Rock", "Steel"],
+    "strengths": ["Grass", "Ground", "Flying", "Dragon"]
+}, Fighting={
+    "weaknesses": ["Flying", "Psychic", "Fairy"],
+    "strengths": ["Normal", "Ice", "Rock", "Dark", "Steel"]
+}, Poison={
+    "weaknesses": ["Ground", "Psychic"],
+    "strengths": ["Grass", "Fairy"]
+}, Ground={
+    "weaknesses": ["Water", "Grass", "Ice"],
+    "strengths": ["Fire", "Electric", "Poison", "Rock", "Steel"]
+}, Flying={
+    "weaknesses": ["Electric", "Ice", "Rock"],
+    "strengths": ["Grass", "Fighting", "Bug"]
+}, Psychic={
+    "weaknesses": ["Bug", "Ghost", "Dark"],
+    "strengths": ["Fighting", "Poison"]
+}, Bug={
+    "weaknesses": ["Fire", "Flying", "Rock"],
+    "strengths": ["Grass", "Psychic", "Dark"]
+}, Rock={
+    "weaknesses": ["Water", "Grass", "Fighting", "Ground", "Steel"],
+    "strengths": ["Fire", "Ice", "Flying", "Bug"]
+}, Ghost={
+    "weaknesses": ["Ghost", "Dark"],
+    "strengths": ["Psychic", "Ghost"]
+}, Dragon={
+    "weaknesses": ["Ice", "Dragon", "Fairy"],
+    "strengths": ["Dragon"]
+}, Dark={
+    "weaknesses": ["Fighting", "Bug", "Fairy"],
+    "strengths": ["Psychic", "Ghost"]
+}, Steel={
+    "weaknesses": ["Fire", "Fighting", "Ground"],
+    "strengths": ["Ice", "Rock", "Fairy"]
+}, Fairy={
+    "weaknesses": ["Poison", "Steel"],
+    "strengths": ["Fighting", "Dragon", "Dark"]
+})
 multiplier=1
-attacker_element=pokemon("attacker_element",["element1","element2"],0,0)
-defender_element=pokemon("attacker_element",["element1","element2"],0,0)
+attacker_element=Pokemon("attacker_element",["element1","element2"],0,0)
+defender_element=Pokemon("attacker_element",["element1","element2"],0,0)
 def get_elemental_effectiveness(attacker_element, defender_element):
-    for i in range(attacker_element[1]):
-        if attacker_element not in elemental_chart or defender_element not in elemental_chart:
-            multiplier=multiplier*1  # if element type not found, assume no advantage or disadvantage
-        if defender_element in elemental_chart[f"{attacker_element[1][i]}"]["weaknesses"]:
-            multiplier=multiplier*2  # attacker has advantage
-        elif defender_element in elemental_chart[f"{attacker_element[1][i]}"]["strengths"]:
-            multiplier=multiplier*0.5  # attacker has disadvantage
+    for i in range(attacker_element.element):
+        if attacker_element.element not in elemental_chart or defender_element.element not in elemental_chart:
+            multiplier = multiplier*1  # if element type not found, assume no advantage or disadvantage
+        if defender_element.element in elemental_chart[f"{attacker_element.element[i]}"]["weaknesses"]:
+            multiplier = multiplier*2  # attacker has advantage
+        elif defender_element.element in elemental_chart[f"{attacker_element.element[i]}"]["strengths"]:
+            multiplier = multiplier*0.5  # attacker has disadvantage
         else:
-            multiplier=multiplier*1 #nothing happens   # if element type not found, assume no advantage or disadvantage
+            multiplier = multiplier*1 #nothing happens   # if element type not found, assume no advantage or disadvantage
 
 #pokemon picking
 chosen_one=input("Which pokemon would you want to have?")
@@ -387,7 +370,7 @@ if start==1 or start==2:
 
             choice=int(input("What is your move? Note:Do your moves in order from 1 to 5. 1 being the first offensive move and 5 being the last defensive move." ))
         if choice==1:
-            get_elemental_effectiveness(chosen_one.element, random_pokemon.element)
+            get_elemental_effectiveness(chosen_one, random_pokemon)
             random_pokemon.hp= random_pokemon.hp - (chosen_one.offensive_move1[0][1]*multiplier)
             chosen_one.energy=chosen_one.energy-1
             print(f"{chosen_one.name} used {chosen_one.offensive_move1[0][0]}")
@@ -514,5 +497,3 @@ if start==1 or start==2:
 chosen_one.energy = chosen_one.energy +30
 if chosen_one.energy>chosen_one.max_energy:
     chosen_one.energy=chosen_one.max_energy
-
-
