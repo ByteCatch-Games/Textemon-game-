@@ -33,11 +33,11 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 `Textemon` comes with a bundle of features already. You can do the followings with it,
 
 ## 🔢 Feature 1
- - Description.
+ - 18 pokemon to choose from!
+ link here: https://app.capacities.io/home/677a21d5-323c-477a-bff4-6b7121fcfc0d
 
 ## 🏗️ Feature 2
 - Description
-## Upcoming features🏗
 
 # 🦄 Upcoming Features
 `model-repo` has all the potentials to grow further. Here are some of the upcoming features planned(not in any order),
