@@ -15,7 +15,10 @@ Once you have the source code, you can run the game by navigating to the directo
 Copy code
 main.py
 This will launch the game and you can start playing!
+ 
+# OR
 
+You can dowwnload the latest release of the game. Then take the .py file titled TextemonGame and run it in python.
 # How to Play🎮
 
 In Textémon, you play as a Pokémon trainer who must explore the world, catch and train Pokémon, and battle with other trainers to become the best trainer around.
@@ -54,7 +57,7 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 - ✔️ Feature Request 10.
 - ✔️ Feature Request 11.
 
-If you find something is missing, `Textemon` is listening. Please create a feature request [from here](https://github.com/Liquefy7822/Textemon-game-/issues/new/choose). If you don't knwo how or don't want to do it yourself, You can fill in a form in contact.
+If you find something is missing, `Textemon` is listening. Please create a feature request [from here](https://github.com/Liquefy7822/Textemon-game-/issues/new/choose). If you don't know how or don't want to do it yourself, You can fill in a form in the Contact section.
 # License
 
 Textémon is released under the GPL General Public Licence V3 license. See the LICENSE file for more details.
