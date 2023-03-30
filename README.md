@@ -54,7 +54,7 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 - ✔️ Feature Request 10.
 - ✔️ Feature Request 11.
 
-If you find something is missing, `Textemon` is listening. Please create a feature request [from here](https://github.com/Liquefy7822/Textemon-game-/issues/new/choose).
+If you find something is missing, `Textemon` is listening. Please create a feature request [from here](https://github.com/Liquefy7822/Textemon-game-/issues/new/choose). If you don't knwo how or don't want to do it yourself, You can fill in a form in contact.
 # License
 
 Textémon is released under the GPL General Public Licence V3 license. See the LICENSE file for more details.
