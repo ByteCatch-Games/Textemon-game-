@@ -60,7 +60,10 @@ If you find something is missing, `Textemon` is listening. Please create a featu
 Textémon is released under the GPL General Public Licence V3 license. See the LICENSE file for more details.
 
 # Informationℹ︎
-This is a project for school. We made the code mainly online on Datalore by jetbrains. There is an accomapny app for this game. The app in made on Quant-UX. (Link here)
+This is a project for school. We made the code mainly online on Space by jetbrains. The code is written in Python 3. There is an accomapny app for this game. The app in made on Quant-UX. [Link here](https://app.quant-ux.com/#/test.html?h=a2aa10aLfeI97P0YyFhyse75jRNMeKTmT4zUtHV55C7YQSdSi4omu7lX1vOi&ln=en)
+
+# Contact
+If you want to report a bug or request a feature, Use [this form](https://forms.gle/r8YruMAJiALmgPSN8) to report bugs, give comments, ask questions and request features. We will then help you open an issue. You can open an issue by yourself if you know how. 
 
 # Credits
 
