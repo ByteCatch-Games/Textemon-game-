@@ -40,7 +40,7 @@ Before submitting a pull request, please make sure your changes are thoroughly t
 - Description
 
 # 🦄 Upcoming Features
-`model-repo` has all the potentials to grow further. Here are some of the upcoming features planned(not in any order),
+`Textemon` has all the potentials to grow further. Here are some of the upcoming features planned(not in any order),
 
 - ✔️ add SQLite to save progress.
 - ✔️ add Playsound for effects of sound in battle, picking of pokemon, etc.
