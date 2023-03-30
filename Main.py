@@ -351,7 +351,6 @@ else:
     del pokemons[random_chosen_one]
 #pokemon check
 print()
-print("{}: {}".format(chosen_one.name, chosen_one.element))
 
 #weakness and strength of chosen one
 chosen_one_weakness=[]
@@ -365,6 +364,8 @@ for i in range(len(chosen_one.element)):
 random_pokemon = pokemons[random2.randint(0,16)]
 print("The AI has selected", random_pokemon.name)
 print()
+print("{}: {}".format(chosen_one.name, chosen_one.element))
+print("{}: {}".format(random_pokemon.name, random_pokemon.element))
 # weakness and strength of chosen one
 random_pokemon_weakness=[]
 random_pokemon_strength=[]
@@ -499,7 +500,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
         if chosen_one.hp<=0:
             print("You lost")
             break
-        if random_pokemon.hp<=0:
+        elif random_pokemon.hp<=0:
             print("You won")
             break
         chosen_one.hp=int(chosen_one.hp)
@@ -524,13 +525,63 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
         elif random_pokemon.energy>=0:
             random_pokemon_hp=random_pokemon.hp
             if random_pokemon.hp<=random_pokemon.max_hp/4:
-                if random_pokemon.defensive_moves1[0][2]>((chosen_one.offensive_moves1[0][1]+chosen_one.offensive_moves2[0][1]+chosen_one.offensive_moves3[0][1])/3):
-                    if random_pokemon.defensive_moves1[0][2]>0:
-                        random_pokemon_hp=random_pokemon.hp
-                        random_pokemon.defensive_moves1[0][2]=(random_pokemon.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                if (random_pokemon.defensive_moves1[0][2] / 100 * random_pokemon.max_hp)>((chosen_one.offensive_moves1[0][1]+chosen_one.offensive_moves2[0][1]+chosen_one.offensive_moves3[0][1])/3*chosen_one_damage):
+                    random_pokemon_hp=random_pokemon.hp
+                    random_pokemon.hp=(random_pokemon.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                    chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves1[0][1]
+                    chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves2[0][1]
+                    chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves3[0][1]
+                    print(f"{random_pokemon.name} used {random_pokemon.defensive_moves1[0][0]}")
+                    if random_pokemon.hp>random_pokemon.max_hp:
+                        random_pokemon.hp=random_pokemon.max_hp
+                    if random_pokemon_hp<random_pokemon.hp:
+                        print(f"{random_pokemon.name} healed")
+                    if chosen_one.offensive_moves3[0][2]>chosen_one.offensive_moves3[0][1]:
+                        print(f"{random_pokemon.name}'s defence increased")
+                    print()
+                    random_pokemon.energy-=3
+                    round4=round5
+                elif (random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp)>((chosen_one.offensive_moves1[0][1]+chosen_one.offensive_moves2[0][1]+chosen_one.offensive_moves3[0][1])/3*chosen_one_damage):
+                    random_pokemon_hp=random_pokemon.hp
+                    random_pokemon.hp=(random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                    chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves1[0][1]
+                    chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves2[0][1]
+                    chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves3[0][1]
+                    print(f"{random_pokemon.name} used {random_pokemon.defensive_moves2[0][0]}")
+                    if random_pokemon.hp>random_pokemon.max_hp:
+                        random_pokemon.hp=random_pokemon.max_hp
+                    if random_pokemon_hp<random_pokemon.hp:
+                        print(f"{random_pokemon.name} healed")
+                    if chosen_one.offensive_moves3[0][2]>chosen_one.offensive_moves3[0][1]:
+                        print(f"{random_pokemon.name}'s defence increased")
+                    print()
+                    random_pokemon.energy-=3
+                    round4=round5
+                else:
+                    AI_choice=random2.randint(1,3)
+                    if AI_choice==1:
+                        chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves1[0][1]*random_pokemon_damage)
+                        random_pokemon.energy-=1
+                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
+                        print()
+                    elif AI_choice==2:
+                        chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves2[0][1]*random_pokemon_damage)
+                        random_pokemon.energy-=1
+                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves2[0][0]}")
+                        print()
+                    else:
+                        chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
+                        random_pokemon.energy-=1
+                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves3[0][0]}")
+                        print()
+            elif random_pokemon.hp<=random_pokemon.max_hp/2:
+                random_pokemon_hp=random_pokemon.hp
+                if round6>=2:
+                    if random_pokemon.defensive_moves1[0][1]>0:
                         chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves1[0][1]
                         chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves2[0][1]
                         chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves3[0][1]
+                        random_pokemon.hp=(chosen_one.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
                         print(f"{random_pokemon.name} used {random_pokemon.defensive_moves1[0][0]}")
                         if random_pokemon.hp>random_pokemon.max_hp:
                             random_pokemon.hp=random_pokemon.max_hp
@@ -541,12 +592,11 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                         print()
                         random_pokemon.energy-=3
                         round4=round5
-                    elif random_pokemon.defensive_moves2[0][2]>0:
-                        random_pokemon_hp=random_pokemon.hp
-                        random_pokemon.defensive_moves1[0][2]=(random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                    elif random_pokemon.defensive_moves2[0][1]>0:
                         chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves1[0][1]
                         chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves2[0][1]
                         chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves3[0][1]
+                        random_pokemon.hp=(chosen_one.defensive_moves2[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
                         print(f"{random_pokemon.name} used {random_pokemon.defensive_moves2[0][0]}")
                         if random_pokemon.hp>random_pokemon.max_hp:
                             random_pokemon.hp=random_pokemon.max_hp
@@ -563,73 +613,6 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                             chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves1[0][1]*random_pokemon_damage)
                             random_pokemon.energy-=1
                             print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
-                            print()
-                        elif AI_choice==2:
-                            chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves2[0][1]*random_pokemon_damage)
-                            random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves2[0][0]}")
-                            print()
-                        else:
-                            chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
-                            random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
-                            print()
-                else:
-                    AI_choice=random2.randint(1,3)
-                    if AI_choice==1:
-                        chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves1[0][1]*random_pokemon_damage)
-                        random_pokemon.energy-=1
-                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
-                        print()
-                    elif AI_choice==2:
-                        chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves2[0][1]*random_pokemon_damage)
-                        random_pokemon.energy-=1
-                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves2[0][0]}")
-                        print()
-                    else:
-                        chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
-                        random_pokemon.energy-=1
-                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
-                        print()
-            elif random_pokemon.hp<=random_pokemon.max_hp/2:
-                random_pokemon_hp=random_pokemon.hp
-                if round3>=2:
-                    if random_pokemon.defensive_moves1[0][1]>0:
-                        chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves1[0][1]
-                        chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves2[0][1]
-                        chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves3[0][1]
-                        random_pokemon.defensive_moves1[0][2]=(chosen_one.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
-                        print(f"{random_pokemon.name} used {random_pokemon.defensive_moves1[0]}")
-                        if random_pokemon.hp>random_pokemon.max_hp:
-                            random_pokemon.hp=random_pokemon.max_hp
-                        if random_pokemon_hp<random_pokemon.hp:
-                            print(f"{random_pokemon.name} healed")
-                        if chosen_one.offensive_moves3[0][2]>chosen_one.offensive_moves3[0][1]:
-                            print(f"{random_pokemon.name}'s defence increased")
-                        print()
-                        random_pokemon.energy-=3
-                        round4=round5
-                    elif random_pokemon.defensive_moves2[0][1]>0:
-                        chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves1[0][1]
-                        chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves2[0][1]
-                        chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves3[0][1]
-                        random_pokemon.defensive_moves1[0][2]=(chosen_one.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
-                        print(f"{random_pokemon.name} used {random_pokemon.defensive_moves1[0]}")
-                        if random_pokemon.hp>random_pokemon.max_hp:
-                            random_pokemon.hp=random_pokemon.max_hp
-                        if random_pokemon_hp<random_pokemon.hp:
-                            print(f"{random_pokemon.name} healed")
-                        if chosen_one.offensive_moves3[0][2]>chosen_one.offensive_moves3[0][1]:
-                            print(f"{random_pokemon.name}'s defence increased")
-                        print()
-                        random_pokemon.energy-=3
-                        round4=round5
-                    else:
-                        AI_choice=random2.randint(1,3)
-                        if AI_choice==1:
-                            chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves1[0][1]*random_pokemon_damage)
-                            random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
                         elif AI_choice==2:
                             chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves2[0][1]*random_pokemon_damage)
                             random_pokemon.energy-=1
@@ -637,7 +620,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                         else:
                             chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
                             random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
+                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves3[0][0]}")
                         print()
             else:
                 AI_choice=random2.randint(1,3)
@@ -652,12 +635,12 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                 else:
                     chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
                     random_pokemon.energy-=1
-                    print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
+                    print(f"{random_pokemon.name} used {random_pokemon.offensive_moves3[0][0]}")
                 print()
         if chosen_one.hp<=0:
             print("You lost")
             break
-        if random_pokemon.hp<=0:
+        elif random_pokemon.hp<=0:
             print("You won")
             break
         chosen_one.hp=int(chosen_one.hp)
@@ -691,7 +674,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
             if random_pokemon.hp<=random_pokemon.max_hp/4:
                 if (random_pokemon.defensive_moves1[0][2] / 100 * random_pokemon.max_hp)>((chosen_one.offensive_moves1[0][1]+chosen_one.offensive_moves2[0][1]+chosen_one.offensive_moves3[0][1])/3):
                     random_pokemon_hp=random_pokemon.hp
-                    random_pokemon.defensive_moves1[0][2]=(random_pokemon.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                    random_pokemon.hp=(random_pokemon.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
                     chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves1[0][1]
                     chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves2[0][1]
                     chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves3[0][1]
@@ -705,39 +688,22 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                     print()
                     random_pokemon.energy-=3
                     round4=round5
-                    elif random_pokemon.defensive_moves2[0][2]>0:
-                        random_pokemon_hp=random_pokemon.hp
-                        random_pokemon.defensive_moves1[0][2]=(random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
-                        chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves1[0][1]
-                        chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves2[0][1]
-                        chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves3[0][1]
-                        print(f"{random_pokemon.name} used {random_pokemon.defensive_moves2[0][0]}")
-                        if random_pokemon.hp>random_pokemon.max_hp:
-                            random_pokemon.hp=random_pokemon.max_hp
-                        if random_pokemon_hp<random_pokemon.hp:
-                            print(f"{random_pokemon.name} healed")
-                        if chosen_one.offensive_moves3[0][2]>chosen_one.offensive_moves3[0][1]:
-                            print(f"{random_pokemon.name}'s defence increased")
-                        print()
-                        random_pokemon.energy-=3
-                        round4=round5
-                    else:
-                        AI_choice=random2.randint(1,3)
-                        if AI_choice==1:
-                            chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves1[0][1]*random_pokemon_damage)
-                            random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
-                            print()
-                        elif AI_choice==2:
-                            chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves2[0][1]*random_pokemon_damage)
-                            random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves2[0][0]}")
-                            print()
-                        else:
-                            chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
-                            random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
-                            print()
+                elif (random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp)>((chosen_one.offensive_moves1[0][1]+chosen_one.offensive_moves2[0][1]+chosen_one.offensive_moves3[0][1])/3*chosen_one_damage):
+                    random_pokemon_hp=random_pokemon.hp
+                    random_pokemon.hp=(random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                    chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves1[0][1]
+                    chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves2[0][1]
+                    chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves3[0][1]
+                    print(f"{random_pokemon.name} used {random_pokemon.defensive_moves2[0][0]}")
+                    if random_pokemon.hp>random_pokemon.max_hp:
+                        random_pokemon.hp=random_pokemon.max_hp
+                    if random_pokemon_hp<random_pokemon.hp:
+                        print(f"{random_pokemon.name} healed")
+                    if chosen_one.offensive_moves3[0][2]>chosen_one.offensive_moves3[0][1]:
+                        print(f"{random_pokemon.name}'s defence increased")
+                    print()
+                    random_pokemon.energy-=3
+                    round4=round5
                 else:
                     AI_choice=random2.randint(1,3)
                     if AI_choice==1:
@@ -753,17 +719,17 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                     else:
                         chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
                         random_pokemon.energy-=1
-                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
+                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves3[0][0]}")
                         print()
             elif random_pokemon.hp<=random_pokemon.max_hp/2:
-                if round3>=2:
+                if round6>=2:
                     random_pokemon_hp=random_pokemon.hp
                     if random_pokemon.defensive_moves1[0][1]>0:
                         chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves1[0][1]
                         chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves2[0][1]
                         chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves1[0][1])*chosen_one.offensive_moves3[0][1]
-                        random_pokemon.defensive_moves1[0][2]=(chosen_one.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
-                        print(f"{random_pokemon.name} used {random_pokemon.defensive_moves1[0]}")
+                        random_pokemon.hp=(random_pokemon.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                        print(f"{random_pokemon.name} used {random_pokemon.defensive_moves1[0][0]}")
                         if random_pokemon.hp>random_pokemon.max_hp:
                             random_pokemon.hp=random_pokemon.max_hp
                         if random_pokemon_hp<random_pokemon.hp:
@@ -776,8 +742,8 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                         chosen_one.offensive_moves1[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves1[0][1]
                         chosen_one.offensive_moves2[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves2[0][1]
                         chosen_one.offensive_moves3[0][1]=(1-random_pokemon.defensive_moves2[0][1])*chosen_one.offensive_moves3[0][1]
-                        random_pokemon.defensive_moves1[0][2]=(chosen_one.defensive_moves1[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
-                        print(f"{random_pokemon.name} used {random_pokemon.defensive_moves1[0]}")
+                        random_pokemon.hp=(random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp) + random_pokemon.hp
+                        print(f"{random_pokemon.name} used {random_pokemon.defensive_moves2[0][0]}")
                         if random_pokemon.hp>random_pokemon.max_hp:
                             random_pokemon.hp=random_pokemon.max_hp
                         if random_pokemon_hp<random_pokemon.hp:
@@ -799,7 +765,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                         else:
                             chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
                             random_pokemon.energy-=1
-                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
+                            print(f"{random_pokemon.name} used {random_pokemon.offensive_moves3[0][0]}")
                 else:
                     AI_choice=random2.randint(1,3)
                     if AI_choice==1:
@@ -813,7 +779,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                     else:
                         chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
                         random_pokemon.energy-=1
-                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
+                        print(f"{random_pokemon.name} used {random_pokemon.offensive_moves3[0][0]}")
                 print()
             else:
                 AI_choice=random2.randint(1,3)
@@ -828,14 +794,14 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                 else:
                     chosen_one.hp=chosen_one.hp-(random_pokemon.offensive_moves3[0][1]*random_pokemon_damage)
                     random_pokemon.energy-=1
-                    print(f"{random_pokemon.name} used {random_pokemon.offensive_moves1[0][0]}")
+                    print(f"{random_pokemon.name} used {random_pokemon.offensive_moves3[0][0]}")
                 print()
         round1+=1
         round4+=1
         if chosen_one.hp<=0:
             print("You lost")
             break
-        if random_pokemon.hp<=0:
+        elif random_pokemon.hp<=0:
             print("You won")
             break
 
@@ -902,7 +868,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                 if chosen_one.hp>chosen_one.max_hp:
                     chosen_one.hp=chosen_one.hp-(chosen_one.max_hp-chosen_one.hp)
                     chosen_one.energy=chosen_one.energy-3
-                    print(f"{chosen_one.name} used {chosen_one.defensive_moves2[0][0]}")
+                print(f"{chosen_one.name} used {chosen_one.defensive_moves2[0][0]}")
                 if random_pokemon.offensive_moves1[0][1]<random_pokemon.offensive_moves1[0][2] and random_pokemon.offensive_moves2[0][1]<random_pokemon.offensive_moves2[0][2] and random_pokemon.offensive_moves3[0][1]<random_pokemon.offensive_moves3[0][2]:
                     print(f"{chosen_one.name}'s defence increased")
                 if chosen_one.hp>chosen_one_hp:
@@ -912,7 +878,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
             if chosen_one.hp<=0:
                 print("You lost")
                 break
-            if random_pokemon.hp<=0:
+            elif random_pokemon.hp<=0:
                 print("You won")
                 break
         round1+=1
@@ -926,4 +892,3 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
 chosen_one.energy = chosen_one.energy +30
 if chosen_one.energy>chosen_one.max_energy:
     chosen_one.energy=chosen_one.max_energy
- 
