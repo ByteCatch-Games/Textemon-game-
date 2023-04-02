@@ -1140,7 +1140,7 @@ Defensive moves: {chosen_one.defensive_moves1[0][0]}(uses 3 energy),{chosen_one.
                     random_pokemon.energy-=3
                     round4=round5
                 elif random_pokemon.defensive_moves2[0][2]>0 and (random_pokemon.defensive_moves2[0][2] / 100 * random_pokemon.max_hp)>((chosen_one.offensive_moves1[0][1]*chosen_one_damage1+chosen_one.offensive_moves2[0][1]*chosen_one_damage2+chosen_one.offensive_moves3[0][1]*chosen_one_damage3)/3):
-                    random_pokemon_speed=random_pokemoon.speed
+                    random_pokemon_speed=random_pokemon.speed
                     random_pokemon.speed=(1+random_pokemon.defensive_moves2[0][5])*random_pokemon.speed
                     random_pokemon_check=random_pokemon.offensive_moves1[0][1]
                     random_pokemon_hp=random_pokemon.hp
