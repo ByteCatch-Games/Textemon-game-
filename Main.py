@@ -311,61 +311,80 @@ while chosen_one==chosen_one:
     if chosen_one=="Pikachu" or chosen_one=="pikachu" or chosen_one=="PIKACHU":
         chosen_one=pikachu
         del pokemons[0]
+        break
     elif chosen_one=="Charizard" or chosen_one=="charizard" or chosen_one=="CHARIZARD":
         chosen_one=charizard
         del pokemons[1]
+        break
     elif chosen_one == "Blastoise" or chosen_one == "blastoise" or chosen_one=="BLASTOISE":
         chosen_one = blastoise
         del pokemons[2]
+        break
     elif chosen_one == "Venusaur" or chosen_one == "venusaur" or chosen_one=="VENUSAUR":
         chosen_one = venusaur
         del pokemons[3]
+        break
     elif chosen_one == "Lycanroc" or chosen_one == "lycanroc" or chosen_one=="LYCANROC":
         chosen_one = lycanroc
         del pokemons[4]
+        break
     elif chosen_one == "Beedrill" or chosen_one == "beedrill" or chosen_one=="BEEDRILL":
         chosen_one = beedrill
         del pokemons[5]
+        break
     elif chosen_one == "Crobat" or chosen_one == "crobat" or chosen_one=="CROBAT":
         chosen_one = crobat
         del pokemons[6]
+        break
     elif chosen_one == "Gengar" or chosen_one == "gengar" or chosen_one=="GENGAR":
         chosen_one = gengar
         del pokemons[7]
+        break
     elif chosen_one == "Metagross" or chosen_one == "metagross" or chosen_one=="METAGROSS":
         chosen_one = metagross
         del pokemons[9]
+        break
     elif chosen_one == "Garchomp" or chosen_one == "garchomp" or chosen_one=="GARCHOMP":
         chosen_one = garchomp
         del pokemons[10]
+        break
     elif chosen_one == "Krookodile" or chosen_one == "krookodile" or chosen_one=="KROOKODILE":
         chosen_one = krookodile
         del pokemons[11]
+        break
     elif chosen_one == "Cryogonal" or chosen_one == "cryogonal" or chosen_one=="CRYOGONAL":
         chosen_one = cryogonal
         del pokemons[17]
+        break
     elif chosen_one == "Tyranitar" or chosen_one == "tyranitar" or chosen_one=="TYRANITAR":
         chosen_one = tyranitar
         del pokemons[12]
+        break
     elif chosen_one == "Machamp" or chosen_one == "machamp" or chosen_one=="MACHAMP":
         chosen_one = machamp
         del pokemons[13]
+        break
     elif chosen_one == "noivern" or chosen_one == "Noivern" or chosen_one=="NOIVERN":
         chosen_one = noivern
         del pokemons[8]
+        break
     elif chosen_one == "Gardevoir" or chosen_one == "gardevoir" or chosen_one=="GARDEVOIR":
         chosen_one = gardevoir
         del pokemons[14]
+        break
     elif chosen_one == "Mimikyu" or chosen_one == "mimikyu" or chosen_one=="MIMIKYU":
         chosen_one = mimikyu
         del pokemons[15]
+        break
     elif chosen_one == "Silvally" or chosen_one == "silvally" or chosen_one=="SILVALLY":
         chosen_one = silvally
         del pokemons[16]
+        break
     elif chosen_one=="Random" or chosen_one=="random" or chosen_one=="RANDOM":
         random_chosen_one=random2.randint(0,17)
         chosen_one=pokemons[random_chosen_one]
         del pokemons[random_chosen_one]
+        break
     else:
         print("That is not a pokemon. Please read the list again and choose your pokemon\n")
         chosen_one=input("Pick which pokemon you want by typing its name or type random to choose a random pokemon?")
