@@ -1,6 +1,6 @@
 #Test and debugging
 import time
-import random2
+import random
 
 #intro message & disclaimer
 print('In a land far far away...')
